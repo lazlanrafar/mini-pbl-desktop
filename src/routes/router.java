@@ -59,6 +59,11 @@ public class router {
         view.setVisible(true);
     }
     
+     public void tabAdminPetugasCreate(){
+        views.admin.PetugasCreate view = new views.admin.PetugasCreate();
+        view.setVisible(true);
+    }
+    
     // Router Petugas
     
     public void tabPetugasPengukuranTanah(){
