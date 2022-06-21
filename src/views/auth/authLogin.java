@@ -32,7 +32,7 @@ public class authLogin extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
+        txt_email = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
@@ -48,9 +48,9 @@ public class authLogin extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel2.setText("Welcome back, please login to your account. ");
 
-        email.addActionListener(new java.awt.event.ActionListener() {
+        txt_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                txt_emailActionPerformed(evt);
             }
         });
 
@@ -97,7 +97,7 @@ public class authLogin extends javax.swing.JFrame {
                         .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(email, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_email, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING))
@@ -113,7 +113,7 @@ public class authLogin extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -128,9 +128,9 @@ public class authLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void txt_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
+    }//GEN-LAST:event_txt_emailActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         // TODO add your handling code here:
@@ -149,7 +149,15 @@ public class authLogin extends javax.swing.JFrame {
     private void btn_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseClicked
         // TODO add your handling code here:
         this.dispose();
-        router.tabAdminPengukuranTanah();
+        String role = txt_email.getText().toString();
+        System.err.println(role);
+        if (role == "admin") {
+            router.tabAdminPengukuranTanah();
+        }else if(role == "petugas"){
+            router.tabPetugasPengukuranTanah();
+        }else{
+            router.tabUserPengukuranTanah();
+        }
     }//GEN-LAST:event_btn_loginMouseClicked
 
     /**
@@ -191,11 +199,11 @@ public class authLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_login;
     private javax.swing.JButton btn_registrasi;
-    private javax.swing.JTextField email;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField password;
+    private javax.swing.JTextField txt_email;
     // End of variables declaration//GEN-END:variables
 }

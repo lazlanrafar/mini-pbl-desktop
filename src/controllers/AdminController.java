@@ -15,6 +15,7 @@ import java.sql.*;
 public class AdminController {
     
     Conn conn = new Conn();
+    
     // Petugas Controller
     
     public ResultSet getAllPetugas(){
@@ -23,12 +24,22 @@ public class AdminController {
             String query = "SELECT * FROM user WHERE role = 'petugas'";
             conn.rs = conn.stat.executeQuery(query);
             
-            System.out.println(conn.rs);
             return conn.rs;
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Failed to Get Data Petugas " + e.getMessage());
             return conn.rs;
+        }
+    }
+    
+    public void createPetugas(String nama, String no_ktp, String tempat_lahir, String tanggal_lahir, String email, String password, String telepon, String alamat){
+        try {
+            conn.Conn();
+            String query = "INSERT INTO `user`(`id`, `role`, `nama`, `tempat_lahir`, `tanggal_lahir`, `no_ktp`, `email`, `password`, `telepon`, `alamat`) VALUES (NULL, 'petugas', '"+nama+"', '"+tempat_lahir+"', '"+tanggal_lahir+"', '"+no_ktp+"', '"+email+"', '"+password+"', '"+telepon+"', '"+alamat+"')";
+            conn.stat.executeUpdate(query);
+            JOptionPane.showMessageDialog(null, "Petugas Berhasil Ditambahkan");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Menambahkan Petugas. " + e.getMessage());
         }
     }
 }

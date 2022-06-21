@@ -36,7 +36,7 @@
                   </Group>
                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="email" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txt_email" alignment="0" max="32767" attributes="0"/>
                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="password" alignment="0" max="32767" attributes="0"/>
@@ -55,7 +55,7 @@
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="email" min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="txt_email" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -87,9 +87,9 @@
         <Property name="text" type="java.lang.String" value="Welcome back, please login to your account. "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="email">
+    <Component class="javax.swing.JTextField" name="txt_email">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_emailActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
