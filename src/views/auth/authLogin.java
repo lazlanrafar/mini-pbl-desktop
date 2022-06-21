@@ -162,6 +162,7 @@ public class authLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Tidak boleh Kosong");
             this.dispose();
             router.tabAuthLogin();
+            return;
         }
         
         try {
