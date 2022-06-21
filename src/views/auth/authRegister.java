@@ -5,6 +5,8 @@
 package views.auth;
 
 import routes.router;
+import controllers.AuthController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,6 +15,7 @@ import routes.router;
 public class authRegister extends javax.swing.JFrame {
     
     router router = new router();
+    AuthController controller = new AuthController();
 
     /**
      * Creates new form AuthRegister
@@ -33,22 +36,22 @@ public class authRegister extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
+        txt_no_ktp = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        email1 = new javax.swing.JTextField();
-        email2 = new javax.swing.JTextField();
+        txt_password = new javax.swing.JTextField();
+        txt_nama = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        email3 = new javax.swing.JTextField();
+        txt_tempat_lahir = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        email4 = new javax.swing.JTextField();
+        txt_tanggal_lahir = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        email5 = new javax.swing.JTextField();
+        txt_email = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        email6 = new javax.swing.JTextField();
+        txt_telepon = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txt_alamat = new javax.swing.JTextArea();
         btn_registrasi = new javax.swing.JButton();
         btn_login = new javax.swing.JButton();
 
@@ -61,44 +64,44 @@ public class authRegister extends javax.swing.JFrame {
         jLabel2.setText("Fill the below form to create a new account. ");
 
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jLabel3.setText("Email Address");
+        jLabel3.setText("Nomor KTP");
 
-        email.addActionListener(new java.awt.event.ActionListener() {
+        txt_no_ktp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                txt_no_ktpActionPerformed(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel4.setText("Password");
 
-        email1.addActionListener(new java.awt.event.ActionListener() {
+        txt_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email1ActionPerformed(evt);
+                txt_passwordActionPerformed(evt);
             }
         });
 
-        email2.addActionListener(new java.awt.event.ActionListener() {
+        txt_nama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email2ActionPerformed(evt);
+                txt_namaActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel5.setText("Nama Lengkap");
 
-        email3.addActionListener(new java.awt.event.ActionListener() {
+        txt_tempat_lahir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email3ActionPerformed(evt);
+                txt_tempat_lahirActionPerformed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel6.setText("Tempat Lahir");
 
-        email4.addActionListener(new java.awt.event.ActionListener() {
+        txt_tanggal_lahir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email4ActionPerformed(evt);
+                txt_tanggal_lahirActionPerformed(evt);
             }
         });
 
@@ -108,27 +111,27 @@ public class authRegister extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel8.setText("Email Address");
 
-        email5.addActionListener(new java.awt.event.ActionListener() {
+        txt_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email5ActionPerformed(evt);
+                txt_emailActionPerformed(evt);
             }
         });
 
         jLabel9.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel9.setText("Telepon");
 
-        email6.addActionListener(new java.awt.event.ActionListener() {
+        txt_telepon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email6ActionPerformed(evt);
+                txt_teleponActionPerformed(evt);
             }
         });
 
         jLabel10.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel10.setText("Alamat Lengkap");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txt_alamat.setColumns(20);
+        txt_alamat.setRows(5);
+        jScrollPane1.setViewportView(txt_alamat);
 
         btn_registrasi.setText("Register");
         btn_registrasi.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -164,21 +167,21 @@ public class authRegister extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1)
-                    .addComponent(email)
+                    .addComponent(txt_no_ktp)
                     .addComponent(jLabel4)
-                    .addComponent(email1)
+                    .addComponent(txt_password)
                     .addComponent(jLabel5)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addComponent(email3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_tempat_lahir, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(email4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_tanggal_lahir, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)))
-                    .addComponent(email2)
-                    .addComponent(email5)
-                    .addComponent(email6)
+                    .addComponent(txt_nama)
+                    .addComponent(txt_email)
+                    .addComponent(txt_telepon)
                     .addComponent(jLabel9)
                     .addComponent(jLabel8)
                     .addComponent(jLabel10)
@@ -199,33 +202,33 @@ public class authRegister extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_no_ktp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_nama, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(email3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_tempat_lahir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(email4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_tanggal_lahir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_telepon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -240,33 +243,33 @@ public class authRegister extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void txt_no_ktpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_no_ktpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
+    }//GEN-LAST:event_txt_no_ktpActionPerformed
 
-    private void email1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email1ActionPerformed
+    private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_email1ActionPerformed
+    }//GEN-LAST:event_txt_passwordActionPerformed
 
-    private void email2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email2ActionPerformed
+    private void txt_namaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_namaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_email2ActionPerformed
+    }//GEN-LAST:event_txt_namaActionPerformed
 
-    private void email3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email3ActionPerformed
+    private void txt_tempat_lahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tempat_lahirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_email3ActionPerformed
+    }//GEN-LAST:event_txt_tempat_lahirActionPerformed
 
-    private void email4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email4ActionPerformed
+    private void txt_tanggal_lahirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tanggal_lahirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_email4ActionPerformed
+    }//GEN-LAST:event_txt_tanggal_lahirActionPerformed
 
-    private void email5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email5ActionPerformed
+    private void txt_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_email5ActionPerformed
+    }//GEN-LAST:event_txt_emailActionPerformed
 
-    private void email6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email6ActionPerformed
+    private void txt_teleponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_teleponActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_email6ActionPerformed
+    }//GEN-LAST:event_txt_teleponActionPerformed
 
     private void btn_registrasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrasiActionPerformed
         // TODO add your handling code here:
@@ -284,8 +287,15 @@ public class authRegister extends javax.swing.JFrame {
 
     private void btn_registrasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_registrasiMouseClicked
         // TODO add your handling code here:
+        int isSuccess =  controller.Registrasi(txt_nama.getText(), txt_no_ktp.getText(), txt_tempat_lahir.getText(), txt_tanggal_lahir.getText(), txt_email.getText(), txt_password.getText(), txt_telepon.getText(), txt_alamat.getText());
+        if (isSuccess == 1) {
+            JOptionPane.showMessageDialog(null, "Berhasil Registrasi");
+            router.tabAuthLogin();
+        }else{
+            JOptionPane.showMessageDialog(null, "Gagal Registrasi");
+            router.tabAuthRegistrasi();
+        }
         this.dispose();
-        router.tabAuthLogin();
     }//GEN-LAST:event_btn_registrasiMouseClicked
 
     /**
@@ -327,13 +337,6 @@ public class authRegister extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_login;
     private javax.swing.JButton btn_registrasi;
-    private javax.swing.JTextField email;
-    private javax.swing.JTextField email1;
-    private javax.swing.JTextField email2;
-    private javax.swing.JTextField email3;
-    private javax.swing.JTextField email4;
-    private javax.swing.JTextField email5;
-    private javax.swing.JTextField email6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -345,6 +348,13 @@ public class authRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txt_alamat;
+    private javax.swing.JTextField txt_email;
+    private javax.swing.JTextField txt_nama;
+    private javax.swing.JTextField txt_no_ktp;
+    private javax.swing.JTextField txt_password;
+    private javax.swing.JTextField txt_tanggal_lahir;
+    private javax.swing.JTextField txt_telepon;
+    private javax.swing.JTextField txt_tempat_lahir;
     // End of variables declaration//GEN-END:variables
 }

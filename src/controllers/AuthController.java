@@ -23,4 +23,15 @@ public class AuthController {
             return conn.rs;
         }
     }
+    
+    public int Registrasi(String nama, String no_ktp, String tempat_lahir, String tanggal_lahir, String email, String password, String telepon, String alamat){
+        try {
+            conn.Conn();
+            String query = "INSERT INTO `user`(`id`, `role`, `nama`, `tempat_lahir`, `tanggal_lahir`, `no_ktp`, `email`, `password`, `telepon`, `alamat`) VALUES (NULL, 'user', '"+nama+"', '"+tempat_lahir+"', '"+tanggal_lahir+"', '"+no_ktp+"', '"+email+"', '"+password+"', '"+telepon+"', '"+alamat+"')";
+            return conn.stat.executeUpdate(query);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Registrasi " + e.getMessage());
+            return 0;
+        }
+    }
 }
