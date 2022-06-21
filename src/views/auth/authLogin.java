@@ -149,7 +149,7 @@ public class authLogin extends javax.swing.JFrame {
     private void btn_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseClicked
         // TODO add your handling code here:
         this.dispose();
-        router.tabUserPengukuranTanah();
+        router.tabPetugasPengukuranTanah();
     }//GEN-LAST:event_btn_loginMouseClicked
 
     /**

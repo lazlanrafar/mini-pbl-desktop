@@ -92,8 +92,8 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tabRegistAlumni" max="32767" attributes="0"/>
-                          <Component id="tabRegistAdmin" max="32767" attributes="0"/>
+                          <Component id="tab_logout" max="32767" attributes="0"/>
+                          <Component id="tab_pengukuran_tanah" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -110,9 +110,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="tabRegistAdmin" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="tab_pengukuran_tanah" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="tabRegistAlumni" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="tab_logout" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace pref="58" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -130,7 +130,7 @@
                 <Property name="text" type="java.lang.String" value="Tanahku"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="tabRegistAdmin">
+            <Component class="javax.swing.JButton" name="tab_pengukuran_tanah">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f0" green="67" red="73" type="rgb"/>
@@ -144,11 +144,11 @@
                 <Property name="text" type="java.lang.String" value="Pengukuran Tanah"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tabRegistAdminMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tabRegistAdminActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tab_pengukuran_tanahMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab_pengukuran_tanahActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="tabRegistAlumni">
+            <Component class="javax.swing.JButton" name="tab_logout">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="11" style="1"/>
@@ -156,7 +156,8 @@
                 <Property name="text" type="java.lang.String" value="Logout"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tabRegistAlumniActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tab_logoutMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tab_logoutActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
