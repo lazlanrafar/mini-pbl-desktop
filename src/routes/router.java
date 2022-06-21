@@ -67,7 +67,7 @@ public class router {
     // Router Petugas
     
     public void tabPetugasPengukuranTanah(){
-        views.petugas.petugasPengukuranTanah view = new views.petugas.petugasPengukuranTanah();
+        views.petugas.PengukuranTanah view = new views.petugas.PengukuranTanah();
         view.setVisible(true);
     }
 }
