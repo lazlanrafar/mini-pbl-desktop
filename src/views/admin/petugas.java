@@ -6,6 +6,10 @@
 package views.admin;
 
 import routes.router;
+import controllers.AdminController;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,15 +18,43 @@ import routes.router;
 public class Petugas extends javax.swing.JFrame {
     
     router router = new router();
+    AdminController controller = new AdminController();
+    
     
     /**
      * Creates new form data_alumni
      */
     public Petugas() {
         initComponents();
+        table();
     }
 
-    
+    public void table(){
+        DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("No");
+        tbl.addColumn("Nama");
+        tbl.addColumn("TTL");
+        tbl.addColumn("Email");
+        tbl.addColumn("Telepon");
+        tbl.addColumn("Alamat");
+        tbl.addColumn("Action");
+        try{
+            ResultSet rs = controller.getAllPetugas();
+            while (rs.next()) {
+                tbl.addRow(new Object[]{
+                    rs.getString("id"),
+                    rs.getString("nama"),
+                    rs.getString("tanggal_lahir"),
+                    rs.getString("email"),
+                    rs.getString("telepon"),
+                    rs.getString("alamat"),
+                });
+                table_petugas.setModel(tbl);
+            }
+        }catch ( SQLException e ){
+            JOptionPane.showMessageDialog(null, "Koneksi Gagal. " + e.getMessage());
+        }
+    }
 
     
     /**
@@ -44,7 +76,7 @@ public class Petugas extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tableDataAlumni = new javax.swing.JTable();
+        table_petugas = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         btn_tambah = new javax.swing.JButton();
 
@@ -164,7 +196,7 @@ public class Petugas extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(115, 103, 240));
         jLabel1.setText("Aplikasi Permintaan Pengukuran Tanah");
 
-        tableDataAlumni.setModel(new javax.swing.table.DefaultTableModel(
+        table_petugas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -175,12 +207,12 @@ public class Petugas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tableDataAlumni.addMouseListener(new java.awt.event.MouseAdapter() {
+        table_petugas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableDataAlumniMouseClicked(evt);
+                table_petugasMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tableDataAlumni);
+        jScrollPane1.setViewportView(table_petugas);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -274,10 +306,10 @@ public class Petugas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tab_pengukuran_tanahActionPerformed
 
-    private void tableDataAlumniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataAlumniMouseClicked
+    private void table_petugasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_petugasMouseClicked
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_tableDataAlumniMouseClicked
+    }//GEN-LAST:event_table_petugasMouseClicked
 
     private void tab_petugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_petugasActionPerformed
         // TODO add your handling code here:
@@ -357,6 +389,6 @@ public class Petugas extends javax.swing.JFrame {
     private javax.swing.JButton tab_pengukuran_tanah;
     private javax.swing.JButton tab_petugas;
     private javax.swing.JButton tab_sertifikat_tanah;
-    private javax.swing.JTable tableDataAlumni;
+    private javax.swing.JTable table_petugas;
     // End of variables declaration//GEN-END:variables
 }

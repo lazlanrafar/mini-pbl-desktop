@@ -10,14 +10,14 @@ import java.sql.*;
  *
  * @author USER
  */
-public class connection {
-    private static final String url = "jdbc:mysql://localhost/minipbl";
-    private static final String user = "root";
-    private static final String password = "";
+public class Conn {
+    String url = "jdbc:mysql://localhost:3306/minipbl";
+    String user = "root";
+    String password = "";
     
-    Connection conn;
-    Statement stat;
-    ResultSet rs;
+    public Connection conn;
+    public Statement stat;
+    public ResultSet rs;
     
     public void Conn() throws SQLException{
         conn = DriverManager.getConnection(url, user, password);
