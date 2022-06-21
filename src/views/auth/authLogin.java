@@ -5,6 +5,9 @@
 package views.auth;
 
 import routes.router;
+import controllers.AuthController;
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,6 +16,7 @@ import routes.router;
 public class authLogin extends javax.swing.JFrame {
     
     router router = new router();
+    AuthController controller = new AuthController();
 
     /**
      * Creates new form AuthLogin
@@ -35,9 +39,9 @@ public class authLogin extends javax.swing.JFrame {
         txt_email = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        password = new javax.swing.JPasswordField();
         btn_login = new javax.swing.JButton();
         btn_registrasi = new javax.swing.JButton();
+        txt_password = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -84,6 +88,12 @@ public class authLogin extends javax.swing.JFrame {
             }
         });
 
+        txt_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_passwordActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,7 +110,7 @@ public class authLogin extends javax.swing.JFrame {
                     .addComponent(txt_email, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(txt_password, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -117,8 +127,8 @@ public class authLogin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_registrasi, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -148,17 +158,35 @@ public class authLogin extends javax.swing.JFrame {
 
     private void btn_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseClicked
         // TODO add your handling code here:
-        this.dispose();
-        String role = txt_email.getText().toString();
-        System.err.println(role);
-        if (role == "admin") {
-            router.tabAdminPengukuranTanah();
-        }else if(role == "petugas"){
-            router.tabPetugasPengukuranTanah();
-        }else{
-            router.tabUserPengukuranTanah();
+        if (txt_email.getText().toString().equals("") || txt_password.getText().toString().equals("")) {
+            JOptionPane.showMessageDialog(null, "Tidak boleh Kosong");
+            this.dispose();
+            router.tabAuthLogin();
+        }
+        
+        try {
+            ResultSet rs = controller.Login(txt_email.getText(), txt_password.getText());
+            if(rs.next()){
+                if (rs.getString("role").equals("admin")) {
+                    router.tabAdminPengukuranTanah();
+                } else if(rs.getString("role").equals("petugas")){
+                    router.tabPetugasPengukuranTanah();
+                }else{
+                    router.tabUserPengukuranTanah();
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Email atau Password Salah!!!");
+                router.tabAuthLogin();
+            }
+            this.dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }//GEN-LAST:event_btn_loginMouseClicked
+
+    private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_passwordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,7 +231,7 @@ public class authLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPasswordField password;
     private javax.swing.JTextField txt_email;
+    private javax.swing.JTextField txt_password;
     // End of variables declaration//GEN-END:variables
 }

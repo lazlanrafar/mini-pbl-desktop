@@ -11,7 +11,7 @@ import java.sql.*;
  * @author USER
  */
 public class Conn {
-    String url = "jdbc:mysql://localhost:3306/minipbl";
+    String url = "jdbc:mysql://localhost:3306/minipbl-net";
     String user = "root";
     String password = "";
     
