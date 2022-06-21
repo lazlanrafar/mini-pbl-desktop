@@ -37,10 +37,10 @@ public class Petugas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        tabRegistAdmin = new javax.swing.JButton();
-        tabRegistAlumni = new javax.swing.JButton();
-        tabRegistAlumni1 = new javax.swing.JButton();
-        tabRegistAlumni2 = new javax.swing.JButton();
+        tab_pengukuran_tanah = new javax.swing.JButton();
+        tab_sertifikat_tanah = new javax.swing.JButton();
+        tab_petugas = new javax.swing.JButton();
+        tab_logout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -58,42 +58,52 @@ public class Petugas extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(115, 103, 240));
         jLabel3.setText("Tanahku");
 
-        tabRegistAdmin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        tabRegistAdmin.setText("Pengukuran Tanah");
-        tabRegistAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+        tab_pengukuran_tanah.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        tab_pengukuran_tanah.setText("Pengukuran Tanah");
+        tab_pengukuran_tanah.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabRegistAdminMouseClicked(evt);
+                tab_pengukuran_tanahMouseClicked(evt);
             }
         });
-        tabRegistAdmin.addActionListener(new java.awt.event.ActionListener() {
+        tab_pengukuran_tanah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tabRegistAdminActionPerformed(evt);
-            }
-        });
-
-        tabRegistAlumni.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        tabRegistAlumni.setText("Sertifikat Tanah");
-        tabRegistAlumni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tabRegistAlumniActionPerformed(evt);
+                tab_pengukuran_tanahActionPerformed(evt);
             }
         });
 
-        tabRegistAlumni1.setBackground(new java.awt.Color(115, 103, 240));
-        tabRegistAlumni1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        tabRegistAlumni1.setForeground(new java.awt.Color(255, 255, 255));
-        tabRegistAlumni1.setText("Petugas");
-        tabRegistAlumni1.addActionListener(new java.awt.event.ActionListener() {
+        tab_sertifikat_tanah.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        tab_sertifikat_tanah.setText("Sertifikat Tanah");
+        tab_sertifikat_tanah.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tab_sertifikat_tanahMouseClicked(evt);
+            }
+        });
+        tab_sertifikat_tanah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tabRegistAlumni1ActionPerformed(evt);
+                tab_sertifikat_tanahActionPerformed(evt);
             }
         });
 
-        tabRegistAlumni2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        tabRegistAlumni2.setText("Logout");
-        tabRegistAlumni2.addActionListener(new java.awt.event.ActionListener() {
+        tab_petugas.setBackground(new java.awt.Color(115, 103, 240));
+        tab_petugas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        tab_petugas.setForeground(new java.awt.Color(255, 255, 255));
+        tab_petugas.setText("Petugas");
+        tab_petugas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tabRegistAlumni2ActionPerformed(evt);
+                tab_petugasActionPerformed(evt);
+            }
+        });
+
+        tab_logout.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        tab_logout.setText("Logout");
+        tab_logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tab_logoutMouseClicked(evt);
+            }
+        });
+        tab_logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tab_logoutActionPerformed(evt);
             }
         });
 
@@ -104,10 +114,10 @@ public class Petugas extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tabRegistAlumni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tabRegistAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tabRegistAlumni1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tabRegistAlumni2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tab_sertifikat_tanah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tab_pengukuran_tanah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tab_petugas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tab_logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -120,13 +130,13 @@ public class Petugas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addGap(32, 32, 32)
-                .addComponent(tabRegistAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tab_pengukuran_tanah, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tabRegistAlumni, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tab_sertifikat_tanah, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tabRegistAlumni1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tab_petugas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tabRegistAlumni2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tab_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -244,32 +254,45 @@ public class Petugas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tabRegistAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabRegistAdminMouseClicked
+    private void tab_pengukuran_tanahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab_pengukuran_tanahMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        router.tabAdminPengukuranTanah();
+    }//GEN-LAST:event_tab_pengukuran_tanahMouseClicked
+
+    private void tab_sertifikat_tanahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_sertifikat_tanahActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_tabRegistAdminMouseClicked
+    }//GEN-LAST:event_tab_sertifikat_tanahActionPerformed
 
-    private void tabRegistAlumniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabRegistAlumniActionPerformed
+    private void tab_pengukuran_tanahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_pengukuran_tanahActionPerformed
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_tabRegistAlumniActionPerformed
-
-    private void tabRegistAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabRegistAdminActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tabRegistAdminActionPerformed
+    }//GEN-LAST:event_tab_pengukuran_tanahActionPerformed
 
     private void tableDataAlumniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataAlumniMouseClicked
         // TODO add your handling code here:
 
     }//GEN-LAST:event_tableDataAlumniMouseClicked
 
-    private void tabRegistAlumni1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabRegistAlumni1ActionPerformed
+    private void tab_petugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_petugasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tabRegistAlumni1ActionPerformed
+    }//GEN-LAST:event_tab_petugasActionPerformed
 
-    private void tabRegistAlumni2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabRegistAlumni2ActionPerformed
+    private void tab_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_logoutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tabRegistAlumni2ActionPerformed
+    }//GEN-LAST:event_tab_logoutActionPerformed
+
+    private void tab_sertifikat_tanahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab_sertifikat_tanahMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        router.tabAdminSertifikatTanah();
+    }//GEN-LAST:event_tab_sertifikat_tanahMouseClicked
+
+    private void tab_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab_logoutMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        router.tabAuthLogin();
+    }//GEN-LAST:event_tab_logoutMouseClicked
 
     /**
      * @param args the command line arguments
@@ -299,20 +322,7 @@ public class Petugas extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
 
 
         /* Create and display the form */
@@ -332,10 +342,10 @@ public class Petugas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton tabRegistAdmin;
-    private javax.swing.JButton tabRegistAlumni;
-    private javax.swing.JButton tabRegistAlumni1;
-    private javax.swing.JButton tabRegistAlumni2;
+    private javax.swing.JButton tab_logout;
+    private javax.swing.JButton tab_pengukuran_tanah;
+    private javax.swing.JButton tab_petugas;
+    private javax.swing.JButton tab_sertifikat_tanah;
     private javax.swing.JTable tableDataAlumni;
     // End of variables declaration//GEN-END:variables
 }

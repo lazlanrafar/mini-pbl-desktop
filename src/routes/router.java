@@ -48,6 +48,7 @@ public class router {
         views.admin.SertifikatTanah view = new views.admin.SertifikatTanah();
         view.setVisible(true);
     }
+    
     public void tabAdminPetugas(){
         views.admin.Petugas view = new views.admin.Petugas();
         view.setVisible(true);
