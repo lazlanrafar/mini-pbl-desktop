@@ -42,7 +42,7 @@ public class PengukuranTanah extends javax.swing.JFrame {
         tab_logout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        bSearch = new javax.swing.JButton();
+        btn_ajukan = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableDataAlumni = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
@@ -152,13 +152,13 @@ public class PengukuranTanah extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(115, 103, 240));
         jLabel1.setText("Aplikasi Permintaan Pengukuran Tanah");
 
-        bSearch.setBackground(new java.awt.Color(115, 103, 240));
-        bSearch.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        bSearch.setForeground(new java.awt.Color(255, 255, 255));
-        bSearch.setText("AJUKAN");
-        bSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_ajukan.setBackground(new java.awt.Color(115, 103, 240));
+        btn_ajukan.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btn_ajukan.setForeground(new java.awt.Color(255, 255, 255));
+        btn_ajukan.setText("AJUKAN");
+        btn_ajukan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bSearchMouseClicked(evt);
+                btn_ajukanMouseClicked(evt);
             }
         });
 
@@ -195,7 +195,7 @@ public class PengukuranTanah extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(bSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_ajukan, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(187, 187, 187)
@@ -214,7 +214,7 @@ public class PengukuranTanah extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_ajukan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
                 .addGap(169, 169, 169))
@@ -270,9 +270,11 @@ public class PengukuranTanah extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tab_logoutActionPerformed
 
-    private void bSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSearchMouseClicked
+    private void btn_ajukanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ajukanMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_bSearchMouseClicked
+        this.dispose();
+        router.tabUserPengukuranTanahCreate();
+    }//GEN-LAST:event_btn_ajukanMouseClicked
 
     private void tab_sertifikat_tanahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab_sertifikat_tanahMouseClicked
         // TODO add your handling code here:
@@ -354,7 +356,7 @@ public class PengukuranTanah extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bSearch;
+    private javax.swing.JButton btn_ajukan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

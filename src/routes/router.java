@@ -32,6 +32,11 @@ public class router {
         view.setVisible(true);
     }
     
+    public void tabUserPengukuranTanahCreate(){
+        views.user.PengukuranTanahCreate view = new views.user.PengukuranTanahCreate();
+        view.setVisible(true);
+    }
+    
     public void tabUserSertifikatTanah(){
         views.user.SertifikatTanah view = new views.user.SertifikatTanah();
         view.setVisible(true);
