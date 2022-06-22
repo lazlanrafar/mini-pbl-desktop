@@ -68,15 +68,15 @@ public class PengukuranTanahCreate extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_upload_shgb = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btn_upload_imb = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        btn_upload_sppt_pbb = new javax.swing.JButton();
         btn_kembali = new javax.swing.JButton();
         btn_simpan = new javax.swing.JButton();
 
@@ -222,10 +222,15 @@ public class PengukuranTanahCreate extends javax.swing.JFrame {
 
         jLabel14.setText(": Upload Dokumen yang dibutuhkan ");
 
-        jButton1.setText("Browse...");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_upload_shgb.setText("Browse...");
+        btn_upload_shgb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_upload_shgbMouseClicked(evt);
+            }
+        });
+        btn_upload_shgb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_upload_shgbActionPerformed(evt);
             }
         });
 
@@ -235,10 +240,15 @@ public class PengukuranTanahCreate extends javax.swing.JFrame {
 
         jLabel17.setText("IMB (Izin Mendirikan Bangunan)");
 
-        jButton2.setText("Browse...");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_upload_imb.setText("Browse...");
+        btn_upload_imb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_upload_imbMouseClicked(evt);
+            }
+        });
+        btn_upload_imb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_upload_imbActionPerformed(evt);
             }
         });
 
@@ -248,10 +258,15 @@ public class PengukuranTanahCreate extends javax.swing.JFrame {
 
         jLabel20.setText("No File Selected..");
 
-        jButton3.setText("Browse...");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_upload_sppt_pbb.setText("Browse...");
+        btn_upload_sppt_pbb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_upload_sppt_pbbMouseClicked(evt);
+            }
+        });
+        btn_upload_sppt_pbb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_upload_sppt_pbbActionPerformed(evt);
             }
         });
 
@@ -326,18 +341,18 @@ public class PengukuranTanahCreate extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jButton1)
+                                        .addComponent(btn_upload_shgb)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel16))
                                     .addComponent(jLabel15)
                                     .addComponent(jLabel17)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jButton2)
+                                        .addComponent(btn_upload_imb)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel18))
                                     .addComponent(jLabel19)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jButton3)
+                                        .addComponent(btn_upload_sppt_pbb)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel20))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -397,19 +412,19 @@ public class PengukuranTanahCreate extends javax.swing.JFrame {
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_upload_shgb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_upload_imb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_upload_sppt_pbb, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -475,17 +490,17 @@ public class PengukuranTanahCreate extends javax.swing.JFrame {
         router.tabAuthLogin();
     }//GEN-LAST:event_tab_logoutMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_upload_shgbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_upload_shgbActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_upload_shgbActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_upload_imbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_upload_imbActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_upload_imbActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_upload_sppt_pbbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_upload_sppt_pbbActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_upload_sppt_pbbActionPerformed
 
     private void btn_kembaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_kembaliMouseClicked
         // TODO add your handling code here:
@@ -498,6 +513,21 @@ public class PengukuranTanahCreate extends javax.swing.JFrame {
         this.dispose();
         router.tabUserPengukuranTanah();
     }//GEN-LAST:event_btn_simpanMouseClicked
+
+    private void btn_upload_shgbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_upload_shgbMouseClicked
+        // TODO add your handling code here:
+        router.handleModalUploadFile();
+    }//GEN-LAST:event_btn_upload_shgbMouseClicked
+
+    private void btn_upload_imbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_upload_imbMouseClicked
+        // TODO add your handling code here:
+        router.handleModalUploadFile();
+    }//GEN-LAST:event_btn_upload_imbMouseClicked
+
+    private void btn_upload_sppt_pbbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_upload_sppt_pbbMouseClicked
+        // TODO add your handling code here:
+        router.handleModalUploadFile();
+    }//GEN-LAST:event_btn_upload_sppt_pbbMouseClicked
 
     /**
      * @param args the command line arguments
@@ -539,9 +569,9 @@ public class PengukuranTanahCreate extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_kembali;
     private javax.swing.JButton btn_simpan;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btn_upload_imb;
+    private javax.swing.JButton btn_upload_shgb;
+    private javax.swing.JButton btn_upload_sppt_pbb;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

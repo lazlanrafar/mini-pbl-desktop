@@ -70,4 +70,14 @@ public class Router {
         views.petugas.PengukuranTanah view = new views.petugas.PengukuranTanah();
         view.setVisible(true);
     }
+    
+    
+    //======================================================================================================
+    // Utils
+    //======================================================================================================
+    
+    public void handleModalUploadFile(){
+        utils.UploadFile view = new utils.UploadFile();
+        view.setVisible(true);
+    }
 }
