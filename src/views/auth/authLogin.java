@@ -8,6 +8,7 @@ import routes.Router;
 import controllers.AuthController;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import models.User;
 
 /**
  *
@@ -168,6 +169,12 @@ public class authLogin extends javax.swing.JFrame {
         try {
             ResultSet rs = controller.Login(txt_email.getText(), txt_password.getText());
             if(rs.next()){
+                //user.User(rs.getString("id"), rs.getString("nama"), rs.getString("no_ktp"), rs.getString("email"));
+                User.id = rs.getString("id");
+                User.nama = rs.getString("nama");
+                User.no_ktp = rs.getString("no_ktp");
+                User.email = rs.getString("email");
+
                 if (rs.getString("role").equals("admin")) {
                     router.tabAdminPengukuranTanah();
                 } else if(rs.getString("role").equals("petugas")){
