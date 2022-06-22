@@ -185,6 +185,12 @@ public class PengukuranTanahCreate extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(115, 103, 240));
         jLabel1.setText("Form Pengajuan Pengukuran Tanah");
 
+        txt_noktp.setEnabled(false);
+
+        txt_nama.setEnabled(false);
+
+        txt_email.setEnabled(false);
+
         jLabel2.setText("Nomor KTP");
 
         jLabel4.setText("Nama Pemohon");

@@ -6,6 +6,7 @@ package controllers;
 import configs.Conn;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import models.User;
 /**
  *
  * @author USER
@@ -16,7 +17,7 @@ public class PetugasController {
     public ResultSet getAllPengukuranTanah(){
         try {
             conn.Conn();
-            String query = "SELECT ukuran_tanah.id, ukuran_tanah.waktu_pengukuran, ukuran_tanah.lebar_tanah, ukuran_tanah.panjang_tanah, ukuran_tanah.dokumen_pl, pengajuan_ukur_tanah.provinsi, pengajuan_ukur_tanah.kota, pengajuan_ukur_tanah.kecamatan, pengajuan_ukur_tanah.alamat_lengkap, pengajuan_ukur_tanah.status FROM ukuran_tanah JOIN pengajuan_ukur_tanah ON ukuran_tanah.id_pengajuan = pengajuan_ukur_tanah.id";
+            String query = "SELECT ukuran_tanah.id, ukuran_tanah.waktu_pengukuran, ukuran_tanah.lebar_tanah, ukuran_tanah.panjang_tanah, ukuran_tanah.dokumen_pl, pengajuan_ukur_tanah.provinsi, pengajuan_ukur_tanah.kota, pengajuan_ukur_tanah.kecamatan, pengajuan_ukur_tanah.alamat_lengkap, pengajuan_ukur_tanah.status FROM ukuran_tanah JOIN pengajuan_ukur_tanah ON ukuran_tanah.id_pengajuan = pengajuan_ukur_tanah.id WHERE ukuran_tanah.id_petugas = '"+User.id+"'";
             conn.rs = conn.stat.executeQuery(query);
             
             return conn.rs;
