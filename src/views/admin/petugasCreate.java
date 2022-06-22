@@ -6,7 +6,7 @@
 package views.admin;
 
 import controllers.AdminController;
-import routes.router;
+import routes.Router;
 
 /**
  *
@@ -14,7 +14,7 @@ import routes.router;
  */
 public class PetugasCreate extends javax.swing.JFrame {
     
-    router router = new router();
+    Router router = new Router();
     AdminController controller = new AdminController();
     
     /**

@@ -5,6 +5,11 @@
  */
 package views.petugas;
 
+import controllers.PetugasController;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import routes.Router;
 
 /**
@@ -14,15 +19,49 @@ import routes.Router;
 public class PengukuranTanah extends javax.swing.JFrame {
     
     Router router = new Router();
+    PetugasController controller = new PetugasController();
     
     /**
      * Creates new form data_alumni
      */
     public PengukuranTanah() {
         initComponents();
+        table();
     }
 
-    
+    public void table(){
+        DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("No");
+        tbl.addColumn("Alamat Lengkap");
+        tbl.addColumn("Dokumen PL");
+        tbl.addColumn("Jadwal Pengukuran");
+        tbl.addColumn("Ukuran Tanah");
+        tbl.addColumn("Status");
+        tbl.addColumn("Action");
+        try{
+            ResultSet rs = controller.getAllPengukuranTanah();
+            
+            int i = 1;
+            String alamat, luas;
+            
+            while (rs.next()) {
+                alamat = rs.getString("provinsi") + ", " + rs.getString("kota") + ", " + rs.getString("kecamatan") + ", " + rs.getString("alamat_lengkap");
+                luas = rs.getString("panjang_tanah") + " x " + rs.getString("lebar_tanah");
+                tbl.addRow(new Object[]{
+                    i,
+                    alamat,
+                    rs.getString("dokumen_pl"),
+                    rs.getString("waktu_pengukuran"),
+                    luas,
+                    rs.getString("status"),
+                }); 
+                i++;
+            }
+            tablePengukuranTanah.setModel(tbl);
+        }catch ( SQLException e ){
+            JOptionPane.showMessageDialog(null, "Koneksi Gagal. " + e.getMessage());
+        }
+    }
 
     
     /**
@@ -42,7 +81,7 @@ public class PengukuranTanah extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tableDataAlumni = new javax.swing.JTable();
+        tablePengukuranTanah = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -134,7 +173,7 @@ public class PengukuranTanah extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(115, 103, 240));
         jLabel1.setText("Aplikasi Permintaan Pengukuran Tanah");
 
-        tableDataAlumni.setModel(new javax.swing.table.DefaultTableModel(
+        tablePengukuranTanah.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -145,12 +184,12 @@ public class PengukuranTanah extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tableDataAlumni.addMouseListener(new java.awt.event.MouseAdapter() {
+        tablePengukuranTanah.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableDataAlumniMouseClicked(evt);
+                tablePengukuranTanahMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tableDataAlumni);
+        jScrollPane1.setViewportView(tablePengukuranTanah);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -227,10 +266,10 @@ public class PengukuranTanah extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tab_pengukuran_tanahActionPerformed
 
-    private void tableDataAlumniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataAlumniMouseClicked
+    private void tablePengukuranTanahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePengukuranTanahMouseClicked
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_tableDataAlumniMouseClicked
+    }//GEN-LAST:event_tablePengukuranTanahMouseClicked
 
     private void tab_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab_logoutMouseClicked
         // TODO add your handling code here:
@@ -288,6 +327,6 @@ public class PengukuranTanah extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton tab_logout;
     private javax.swing.JButton tab_pengukuran_tanah;
-    private javax.swing.JTable tableDataAlumni;
+    private javax.swing.JTable tablePengukuranTanah;
     // End of variables declaration//GEN-END:variables
 }
