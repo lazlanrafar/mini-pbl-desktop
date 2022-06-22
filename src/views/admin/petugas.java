@@ -40,17 +40,21 @@ public class Petugas extends javax.swing.JFrame {
         tbl.addColumn("Action");
         try{
             ResultSet rs = controller.getAllPetugas();
+            int i = 1;
+            String ttl;
             while (rs.next()) {
+                ttl = rs.getString("tempat_lahir") + ", " + rs.getString("tanggal_lahir");
                 tbl.addRow(new Object[]{
-                    rs.getString("id"),
+                    i,
                     rs.getString("nama"),
-                    rs.getString("tanggal_lahir"),
+                    ttl,
                     rs.getString("email"),
                     rs.getString("telepon"),
                     rs.getString("alamat"),
                 });
-                table_petugas.setModel(tbl);
+                i++;
             }
+            table_petugas.setModel(tbl);
         }catch ( SQLException e ){
             JOptionPane.showMessageDialog(null, "Koneksi Gagal. " + e.getMessage());
         }
