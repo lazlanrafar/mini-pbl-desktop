@@ -16,7 +16,26 @@ public class AdminController {
     
     Conn conn = new Conn();
     
+    // =====================================================================================
+    // Pengukuran Tanah
+    // =====================================================================================
+    
+    public ResultSet getAllPengukuranTanah(){
+        try {
+            conn.Conn();
+            String query = "SELECT * FROM pengajuan_ukur_tanah";
+            conn.rs = conn.stat.executeQuery(query);
+            
+            return conn.rs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Failed to Get Data Pengukuran Tanah " + e.getMessage());
+            return conn.rs;
+        }
+    }
+    
+    // =====================================================================================
     // Sertifikat Tanah
+    // =====================================================================================
     
     public ResultSet getAllSertifikatTanah(){
         try {
@@ -31,7 +50,9 @@ public class AdminController {
         }
     }
     
+    // =====================================================================================
     // Petugas Controller
+    // =====================================================================================
     
     public ResultSet getAllPetugas(){
         try {
