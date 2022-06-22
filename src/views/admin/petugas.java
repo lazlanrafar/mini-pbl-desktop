@@ -5,7 +5,7 @@
  */
 package views.admin;
 
-import routes.router;
+import routes.Router;
 import controllers.AdminController;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Petugas extends javax.swing.JFrame {
     
-    router router = new router();
+    Router router = new Router();
     AdminController controller = new AdminController();
     
     

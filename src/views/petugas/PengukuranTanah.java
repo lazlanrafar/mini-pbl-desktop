@@ -5,7 +5,7 @@
  */
 package views.petugas;
 
-import routes.router;
+import routes.Router;
 
 /**
  *
@@ -13,7 +13,7 @@ import routes.router;
  */
 public class PengukuranTanah extends javax.swing.JFrame {
     
-    router router = new router();
+    Router router = new Router();
     
     /**
      * Creates new form data_alumni

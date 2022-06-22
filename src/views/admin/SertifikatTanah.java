@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import routes.router;
+import routes.Router;
 
 /**
  *
@@ -18,7 +18,7 @@ import routes.router;
  */
 public class SertifikatTanah extends javax.swing.JFrame {
     
-    router router = new router();
+    Router router = new Router();
     AdminController controller = new AdminController();
     
     /**

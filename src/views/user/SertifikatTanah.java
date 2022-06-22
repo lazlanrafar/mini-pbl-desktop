@@ -5,7 +5,12 @@
  */
 package views.user;
 
-import routes.router;
+import controllers.UserController;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import routes.Router;
 
 /**
  *
@@ -13,16 +18,50 @@ import routes.router;
  */
 public class SertifikatTanah extends javax.swing.JFrame {
     
-    router router = new router();
+    Router router = new Router();
+    UserController controller = new UserController();
     
     /**
      * Creates new form data_alumni
      */
     public SertifikatTanah() {
         initComponents();
+        table();
     }
 
-    
+    public void table(){
+        DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("No");
+        tbl.addColumn("Alamat");
+        tbl.addColumn("Dokumen PL");
+        tbl.addColumn("Luas");
+        tbl.addColumn("Harga");
+        tbl.addColumn("Status");
+        tbl.addColumn("Action");
+        try{
+            ResultSet rs = controller.getAllSertifikatTanah();
+            
+            int i = 1;
+            String alamat, luas;
+            
+            while (rs.next()) {
+                alamat = rs.getString("provinsi") + ", " + rs.getString("kota") + ", " + rs.getString("kecamatan") + ", " + rs.getString("alamat_lengkap");
+                luas = rs.getString("panjang_tanah") + " x " + rs.getString("lebar_tanah");
+                tbl.addRow(new Object[]{
+                    i,
+                    alamat,
+                    rs.getString("dokumen_pl"),
+                    luas,
+                    rs.getString("biaya"),
+                    rs.getString("status"),
+                }); 
+                i++;
+            }
+            tableSertifikatTanah.setModel(tbl);
+        }catch ( SQLException e ){
+            JOptionPane.showMessageDialog(null, "Koneksi Gagal. " + e.getMessage());
+        }
+    }
 
     
     /**
@@ -43,7 +82,7 @@ public class SertifikatTanah extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tableDataAlumni = new javax.swing.JTable();
+        tableSertifikatTanah = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -146,7 +185,7 @@ public class SertifikatTanah extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(115, 103, 240));
         jLabel1.setText("Aplikasi Permintaan Pengukuran Tanah");
 
-        tableDataAlumni.setModel(new javax.swing.table.DefaultTableModel(
+        tableSertifikatTanah.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -157,12 +196,12 @@ public class SertifikatTanah extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tableDataAlumni.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableSertifikatTanah.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableDataAlumniMouseClicked(evt);
+                tableSertifikatTanahMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tableDataAlumni);
+        jScrollPane1.setViewportView(tableSertifikatTanah);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -240,10 +279,10 @@ public class SertifikatTanah extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tab_pengukuran_tanahActionPerformed
 
-    private void tableDataAlumniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataAlumniMouseClicked
+    private void tableSertifikatTanahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableSertifikatTanahMouseClicked
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_tableDataAlumniMouseClicked
+    }//GEN-LAST:event_tableSertifikatTanahMouseClicked
 
     private void tab_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tab_logoutActionPerformed
         // TODO add your handling code here:
@@ -365,6 +404,6 @@ public class SertifikatTanah extends javax.swing.JFrame {
     private javax.swing.JButton tab_logout;
     private javax.swing.JButton tab_pengukuran_tanah;
     private javax.swing.JButton tab_sertifikat_tanah;
-    private javax.swing.JTable tableDataAlumni;
+    private javax.swing.JTable tableSertifikatTanah;
     // End of variables declaration//GEN-END:variables
 }

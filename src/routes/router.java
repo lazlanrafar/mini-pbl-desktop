@@ -11,7 +11,7 @@ import views.auth.authRegister;
  *
  * @author USER
  */
-public class router {
+public class Router {
     
     // Router Auth
     
