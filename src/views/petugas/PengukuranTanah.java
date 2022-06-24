@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import routes.Router;
+import routes.Index;
 
 /**
  *
@@ -18,7 +18,7 @@ import routes.Router;
  */
 public class PengukuranTanah extends javax.swing.JFrame {
     
-    Router router = new Router();
+    Index router = new Index();
     PetugasController controller = new PetugasController();
     
     /**

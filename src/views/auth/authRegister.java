@@ -4,7 +4,7 @@
  */
 package views.auth;
 
-import routes.Router;
+import routes.Index;
 import controllers.AuthController;
 import javax.swing.JOptionPane;
 
@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class authRegister extends javax.swing.JFrame {
     
-    Router router = new Router();
+    Index router = new Index();
     AuthController controller = new AuthController();
 
     /**

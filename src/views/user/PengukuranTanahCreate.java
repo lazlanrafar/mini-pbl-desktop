@@ -6,7 +6,7 @@
 package views.user;
 
 import models.User;
-import routes.Router;
+import routes.Index;
 
 /**
  *
@@ -14,7 +14,7 @@ import routes.Router;
  */
 public class PengukuranTanahCreate extends javax.swing.JFrame {
     
-    Router router = new Router();
+    Index router = new Index();
     
     /**
      * Creates new form data_alumni

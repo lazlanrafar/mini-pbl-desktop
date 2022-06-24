@@ -4,7 +4,7 @@
  */
 package views.auth;
 
-import routes.Router;
+import routes.Index;
 import controllers.AuthController;
 import java.sql.*;
 import javax.swing.JOptionPane;
@@ -16,7 +16,7 @@ import models.User;
  */
 public class authLogin extends javax.swing.JFrame {
     
-    Router router = new Router();
+    Index router = new Index();
     AuthController controller = new AuthController();
 
     /**

@@ -4,7 +4,7 @@
  */
 package utils;
 
-import routes.Router;
+import routes.Index;
 
 /**
  *
@@ -12,7 +12,7 @@ import routes.Router;
  */
 public class UploadFile extends javax.swing.JFrame {
     
-    Router router = new Router();
+    Index router = new Index();
 
     /**
      * Creates new form UploadFile
